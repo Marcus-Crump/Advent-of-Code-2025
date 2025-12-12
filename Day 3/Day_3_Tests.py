@@ -13,7 +13,21 @@ class Day_3(unittest.TestCase):
             self.assertEqual(expected, actual)
             print("SAMPLE TEST PASSED")
         except AssertionError:
-            print(f"TEST FAILED\nAcutal:{actual} != Expected: {expected}")
+            print(f"PART 1 SAMPLE TEST FAILED\nAcutal:{actual} != Expected: {expected}")
+
+    def test_sample_2(self):
+        expected = 3121910778619
+        actual = 0
+        with open("Day_3_Sample.txt", "r") as file:
+            for line in file:
+                actual += d3.day_3_p2(line.strip())
+        
+        try:
+            self.assertEqual(expected, actual)
+            print("SAMPLE TEST PART 2 PASSED")
+        except AssertionError:
+            print(f"PART 2 SAMPLE TEST FAILED\nAcutal:{actual} != Expected: {expected}")
+
 
 if __name__ == "__main__":
     unittest.main()
